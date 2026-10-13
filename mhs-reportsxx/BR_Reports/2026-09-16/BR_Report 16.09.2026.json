@@ -1,0 +1,32 @@
+{
+  "ReportPrintedDataTime": "16-09-2026 00-00-13",
+  "requestedTimeFrame": {
+    "StartDate": "15-09-2026 00-00-00",
+    "EndDate": "16-09-2026 00-00-00",
+    "SystemId": "BDS",
+    "UserId": "",
+    "UserIdOfflineShredding": "bds-pradana, BDS-Indra",
+    "process": {
+      "StartOfDayorshift": "01-01-0001 00-00-00",
+      "EndOfDayorshift": "15-09-2026 16-47-51"
+    }
+  },
+  "presses": [
+    {
+      "pressId": "Press_1",
+      "duration": "00:40:30",
+      "throughputKgPerH": 792.89,
+      "briquettesCount": 446,
+      "weightPerBriquetteG": 1200,
+      "briquetteWeightKg": 535.2
+    },
+    {
+      "pressId": "Press_2",
+      "duration": "00:00:00",
+      "throughputKgPerH": 0,
+      "briquettesCount": 0,
+      "weightPerBriquetteG": 0,
+      "briquetteWeightKg": 0
+    }
+  ]
+}

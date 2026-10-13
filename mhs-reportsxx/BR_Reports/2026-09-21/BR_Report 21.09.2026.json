@@ -1,0 +1,32 @@
+{
+  "ReportPrintedDataTime": "21-09-2026 00-00-21",
+  "requestedTimeFrame": {
+    "StartDate": "20-09-2026 00-00-00",
+    "EndDate": "21-09-2026 00-00-00",
+    "SystemId": "BDS",
+    "UserId": "",
+    "UserIdOfflineShredding": "bds-agus",
+    "process": {
+      "StartOfDayorshift": "01-01-0001 00-00-00",
+      "EndOfDayorshift": "20-09-2026 01-13-42"
+    }
+  },
+  "presses": [
+    {
+      "pressId": "Press_1",
+      "duration": "00:00:00",
+      "throughputKgPerH": 0,
+      "briquettesCount": 0,
+      "weightPerBriquetteG": 0,
+      "briquetteWeightKg": 0
+    },
+    {
+      "pressId": "Press_2",
+      "duration": "00:00:00",
+      "throughputKgPerH": 0,
+      "briquettesCount": 0,
+      "weightPerBriquetteG": 0,
+      "briquetteWeightKg": 0
+    }
+  ]
+}
