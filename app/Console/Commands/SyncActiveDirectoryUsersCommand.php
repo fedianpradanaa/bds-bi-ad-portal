@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Services\ActiveDirectoryService;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 
 class SyncActiveDirectoryUsersCommand extends Command
 {
@@ -20,10 +21,13 @@ class SyncActiveDirectoryUsersCommand extends Command
         if (! empty($res['errors'])) {
             foreach ($res['errors'] as $err) {
                 $this->error('Error: '.$err);
+                Log::channel('ad_sync')->error('AD Sync Error: '.$err);
             }
         }
 
-        $this->info("AD Sync completed: {$res['synced']} users processed ({$res['created']} created, {$res['updated']} updated).");
+        $message = "AD Sync completed: {$res['synced']} users processed ({$res['created']} created, {$res['updated']} updated).";
+        $this->info($message);
+        Log::channel('ad_sync')->info($message);
 
         return 0;
     }

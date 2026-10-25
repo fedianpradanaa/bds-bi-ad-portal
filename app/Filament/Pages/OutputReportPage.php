@@ -19,7 +19,7 @@ class OutputReportPage extends Page
 
     protected static ?string $slug = 'output-reports';
 
-    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-document-chart-bar';
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-arrow-up-tray';
 
     protected static ?string $navigationLabel = 'Output Report';
 

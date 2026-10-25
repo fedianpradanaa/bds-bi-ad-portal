@@ -11,6 +11,7 @@ use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Filament\Navigation\NavigationGroup; // <-- 1. IMPORT NAVIGATION GROUP
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
@@ -31,6 +32,7 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
+            ->favicon(asset('images/favicon.svg'))
             ->login(Login::class)
             ->brandName('BDS Access Portal')
             ->brandLogo(fn () => view('filament.brand'))
@@ -39,11 +41,23 @@ class AdminPanelProvider extends PanelProvider
                 PanelsRenderHook::USER_MENU_BEFORE,
                 fn () => view('filament.components.topbar-user-info')
             )
-            ->topNavigation()
+            // ->topNavigation()
+            ->sidebarCollapsibleOnDesktop()
             ->globalSearch(false)
             ->darkMode(false)
             ->colors([
                 'primary' => Color::Indigo,
+            ])
+            ->navigationGroups([
+                NavigationGroup::make('Access Management')
+                    ->icon('heroicon-o-shield-check')
+                    ->collapsible(true),
+                NavigationGroup::make('Reports & Operations')
+                    ->icon('heroicon-o-document-chart-bar')
+                    ->collapsible(true),
+                NavigationGroup::make('Compliance & Security')
+                    ->icon('heroicon-o-lock-closed')
+                    ->collapsible(true),
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')

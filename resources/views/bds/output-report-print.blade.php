@@ -254,7 +254,7 @@
             <p>Tanggal Operasional: {{ $selectedDate }} | Format A4 Portrait</p>
         </div>
         <div class="btn-action-group">
-            <button onclick="window.close()" class="btn-close-gray">Tutup Halaman</button>
+            <button onclick="closeReportPage()" class="btn-close-gray">Tutup Halaman</button>
             <button onclick="window.print()" class="btn-print-primary">Cetak Dokumen (Ctrl+P)</button>
         </div>
     </div>
@@ -269,6 +269,17 @@
                 window.print();
             }, 400);
         });
+
+        function closeReportPage() {
+            // Coba tutup jendela browser
+            window.close();
+            
+            // Jika dalam waktu 200ms jendela tidak tertutup (karena diblokir browser), 
+            // arahkan kembali ke halaman dashboard output-reports Filament
+            setTimeout(function() {
+                window.location.href = '/admin/output-reports';
+            }, 200);
+        }
     </script>
 </body>
 </html>

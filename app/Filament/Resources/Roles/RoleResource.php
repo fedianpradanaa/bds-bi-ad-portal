@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Filament\Resources\Roles;
 
+// use App\Filament\Clusters\AccessManagement;
 use App\Filament\Resources\Roles\Pages\CreateRole;
 use App\Filament\Resources\Roles\Pages\EditRole;
 use App\Filament\Resources\Roles\Pages\ListRoles;
@@ -31,6 +32,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rules\Unique;
 use Override;
+use BackedEnum;
 
 class RoleResource extends Resource
 {
@@ -40,6 +42,8 @@ class RoleResource extends Resource
     use Essentials\HasLabels;
     use HasShieldFormComponents;
 
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-key';
+    
     protected static ?string $navigationLabel = 'Roles & Permissions';
 
     protected static \UnitEnum|string|null $navigationGroup = 'Access Management';
@@ -194,7 +198,7 @@ class RoleResource extends Resource
 
     public static function getCluster(): ?string
     {
-        return Utils::getResourceCluster();
+        return null;
     }
 
     public static function getEssentialsPlugin(): ?FilamentShieldPlugin

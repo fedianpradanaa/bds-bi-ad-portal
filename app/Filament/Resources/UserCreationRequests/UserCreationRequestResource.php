@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\UserCreationRequests;
 
+// use App\Filament\Clusters\AccessManagement;
 use App\Filament\Resources\UserCreationRequests\Pages\CreateUserCreationRequest;
 use App\Filament\Resources\UserCreationRequests\Pages\ListUserCreationRequests;
 use App\Filament\Resources\UserCreationRequests\Pages\ViewUserCreationRequest;
@@ -20,6 +21,8 @@ use UnitEnum;
 class UserCreationRequestResource extends Resource
 {
     protected static ?string $model = UserCreationRequest::class;
+
+    // protected static ?string $cluster = AccessManagement::class;
 
     protected static string|array $routeMiddleware = ['web', 'auth'];
 

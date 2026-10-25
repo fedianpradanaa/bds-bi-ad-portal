@@ -135,6 +135,30 @@ return [
             'path' => storage_path('logs/laravel.log'),
         ],
 
+        'ad_sync' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/ad-sync.log'),
+            'level' => 'debug',
+        ],
+        'report_import' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/report-import.log'),
+            'level' => 'debug',
+        ],
+
+        'briquetting_import' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/briquetting-import.log'),
+            'level' => 'debug',
+        ],
+
+        'bds_sync' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/bds_sync.log'),
+            'level' => 'debug',
+        ],
+
+
     ],
 
 ];

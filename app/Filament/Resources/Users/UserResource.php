@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Users;
 
+// use App\Filament\Clusters\AccessManagement;
 use App\Filament\Resources\Users\Pages\CreateUser;
 use App\Filament\Resources\Users\Pages\EditUser;
 use App\Filament\Resources\Users\Pages\ListUsers;
@@ -30,6 +31,8 @@ use UnitEnum;
 class UserResource extends Resource
 {
     protected static ?string $model = User::class;
+
+    // protected static ?string $cluster = AccessManagement::class;
 
     protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-users';
 

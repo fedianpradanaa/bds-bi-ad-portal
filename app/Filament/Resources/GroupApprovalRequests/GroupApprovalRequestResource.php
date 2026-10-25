@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\GroupApprovalRequests;
 
+use App\Filament\Clusters\AccessManagement;
 use App\Filament\Resources\GroupApprovalRequests\Pages\CreateGroupApprovalRequest;
 use App\Filament\Resources\GroupApprovalRequests\Pages\ListGroupApprovalRequests;
 use App\Filament\Resources\GroupApprovalRequests\Pages\ViewGroupApprovalRequest;
@@ -20,6 +21,8 @@ use UnitEnum;
 class GroupApprovalRequestResource extends Resource
 {
     protected static ?string $model = GroupApprovalRequest::class;
+
+    // protected static ?string $cluster = AccessManagement::class;
 
     protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-shield-check';
 

@@ -21,7 +21,7 @@ class BdsReportPage extends Page
 
     protected static ?string $slug = 'bds-reports';
 
-    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-document-chart-bar';
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-presentation-chart-line';
 
     protected static ?string $navigationLabel = 'BDS Report';
 
@@ -56,7 +56,8 @@ class BdsReportPage extends Page
             return false;
         }
 
-        return $user->isOperator();
+        // Izinkan Admin, Super Admin, Supervisor, dan Operator untuk mengaksesnya
+        return $user->isSuperAdmin() || $user->isOperator();
     }
 
     public function mount(): void

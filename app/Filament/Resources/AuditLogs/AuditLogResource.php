@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\AuditLogs;
 
+// use App\Filament\Clusters\ComplianceAndSecurity;
 use App\Filament\Resources\AuditLogs\Pages\ListAuditLogs;
 use App\Filament\Resources\AuditLogs\Pages\ViewAuditLog;
 use App\Filament\Resources\AuditLogs\Schemas\AuditLogInfolist;
@@ -18,6 +19,8 @@ use UnitEnum;
 class AuditLogResource extends Resource
 {
     protected static ?string $model = AuditLog::class;
+
+    // protected static ?string $cluster = ComplianceAndSecurity::class;
 
     protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-clipboard-document-list';
 

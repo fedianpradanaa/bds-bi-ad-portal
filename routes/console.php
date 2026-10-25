@@ -9,4 +9,4 @@ Artisan::command('inspire', function () {
 })->purpose('Display an inspiring quote');
 
 Schedule::command('ad:sync-users')->everyFiveMinutes()->withoutOverlapping();
-Schedule::command('report:import-br')->everyTenMinutes();
+Schedule::command('report:import-br')->everyTwoHours();

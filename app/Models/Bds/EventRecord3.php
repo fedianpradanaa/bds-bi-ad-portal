@@ -21,6 +21,11 @@ class EventRecord3 extends Model
         'weight',
         'item_number',
         'quantity',
+        'first_operator',
+        'second_operator',
+        'third_operator',
+        'teamleader',
+        'shift_name',
     ];
 
     protected function casts(): array

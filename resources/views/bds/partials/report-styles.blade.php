@@ -37,9 +37,12 @@
         align-items: flex-start;
     }
 
+    /* Pengaturan Logo untuk Tampilan Layar (Screen) */
     .doc-bi-logo {
-        height: 38px;
+        height: 46px;
+        width: auto;
         object-fit: contain;
+        display: block;
     }
 
     .doc-subnote {
@@ -279,6 +282,12 @@
         .bds-paper-sheet:last-child {
             page-break-after: avoid;
             break-after: avoid;
+        }
+
+        /* Pengaturan Ukuran Logo Khusus Media Print */
+        .doc-bi-logo {
+            height: 44px !important;
+            width: auto !important;
         }
 
         .doc-table-card {
